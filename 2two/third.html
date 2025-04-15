@@ -1,0 +1,53 @@
+
+<!-- 2.4 Marks Calculator (Internal and External) -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Marks Calculator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e8f0fe;
+      padding: 30px;
+      text-align: center;
+    }
+    .mark-result {
+      font-size: 18px;
+      margin-top: 20px;
+      background-color: #fff;
+      display: inline-block;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .pass {
+      color: green;
+      font-weight: bold;
+    }
+    .fail {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>Marks Calculator</h2>
+
+  <script>
+    let internal = parseFloat(prompt("Enter Internal Marks (out of 50):"));
+    let external = parseFloat(prompt("Enter External Marks (out of 100):"));
+
+    let total = internal + external;
+    let resultText = total >= 75 ? `<span class='pass'>Pass</span>` : `<span class='fail'>Fail</span>`;
+
+    document.write(`
+      <div class="mark-result">
+        <p>Internal Marks: ${internal}</p>
+        <p>External Marks: ${external}</p>
+        <p>Total Marks: ${total}</p>
+        <p>Result: ${resultText}</p>
+      </div>
+    `);
+  </script>
+</body>
+</html>
